@@ -16,7 +16,7 @@ try {
   const Worklets = WorkletsProxy.Worklets
   isAsyncContextBusy = Worklets.createSharedValue(false)
 
-  const asyncContext = Worklets.createContext('VisionCamera.async')
+  const asyncContext = Worklets.defaultContext
   runOnAsyncContext = asyncContext.createRunAsync((frame: Frame, func: () => void) => {
     'worklet'
     try {
